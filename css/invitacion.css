@@ -335,7 +335,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   align-items: center;
   position: relative;
   text-align: center;
-  padding: 88px 24px calc(20px + env(safe-area-inset-bottom));
+  padding: calc(22px + env(safe-area-inset-top)) 24px calc(20px + env(safe-area-inset-bottom));
   background:
     radial-gradient(120% 80% at 50% 0%, #FBF4FE 0%, var(--crema) 45%, #E4CFEC 100%);
   overflow: hidden;
@@ -399,16 +399,9 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 .d2 { top: 38%; left: 12%;  animation-delay: 1s; }
 .d3 { bottom: 36%; right: 10%; animation-delay: 1.6s; }
 
+/* corona de la portada: oculta (se veía encima del nombre) */
 .portada-corona {
-  position: absolute;
-  top: calc(10px + env(safe-area-inset-top));
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: min(66%, 250px);
-  opacity: 0.95;
-  z-index: 3;
-  animation: flotar 6s ease-in-out infinite;
+  display: none;
 }
 
 .portada-inner {
@@ -417,7 +410,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 66px;
+  margin-top: 20px;
   margin-bottom: auto;
 }
 
@@ -495,7 +488,19 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 /* ============================================================
    CUENTA REGRESIVA
    ============================================================ */
-#faltan { background: var(--crema-suave); }
+/* cuenta regresiva a pantalla completa, reloj centrado */
+#faltan {
+  background: var(--crema-suave);
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#faltan .contenedor {
+  width: 100%;
+}
 
 .countdown {
   display: grid;
@@ -724,8 +729,8 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 #vestimenta { background: var(--crema-suave); }
 
 .vestido {
-  width: min(52%, 150px);
-  filter: drop-shadow(0 12px 16px rgba(122, 47, 160, 0.28));
+  width: min(48%, 180px);
+  filter: drop-shadow(0 14px 20px rgba(122, 47, 160, 0.30));
   animation: basta 2.6s ease-in-out infinite;
 }
 
