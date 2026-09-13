@@ -492,13 +492,10 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 
 .quinceanera {
   position: relative;
-  width: min(52%, 215px);
+  width: min(56%, 230px);
   margin-top: 8px;
   z-index: 4;
   pointer-events: none;
-  border: 3px solid var(--oro-claro);
-  border-radius: 18px;
-  box-shadow: 0 18px 32px rgba(90, 44, 112, 0.30);
   animation: aparicion 1.2s 0.6s ease both;
 }
 
