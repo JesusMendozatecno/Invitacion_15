@@ -1,0 +1,12 @@
+# Scripts temporales de verificación (locales, NO se publican)
+_*.cjs
+_*.js
+_*.html
+*.cjs
+.verificar.cjs
+_dom_ok.html
+
+# Sistema
+Thumbs.db
+.DS_Store
+*.log

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MIS QUINCE AÑOS · Tu Nombre</title>
+
+  <!-- Metadata para compartir en WhatsApp / redes -->
+  <meta name="description" content="Te invito a celebrar este día tan especial conmigo. Reserva la fecha, checa la ubicación y ven a disfrutar.">
+  <meta name="theme-color" content="#A87F3F">
+  <meta property="og:title" content="Nos vemos en mi celebración">
+  <meta property="og:description" content="Reserva este día, checa la cuenta regresiva y descubre todos los detalles de la fiesta.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://TU_USUARIO.github.io/TU_REPOSITORIO/">
+  <meta property="og:image" content="assets/images/portada.png">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="preload" as="style" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="css/invitacion.css">
+</head>
+<body>
+
+  <main class="invitacion">
+
+    <!-- ================= PORTADA ================= -->
+    <section class="portada" id="portada" aria-label="Portada de la invitación">
+      <img class="portada-corona" src="assets/images/corona.svg" alt="" aria-hidden="true">
+      <div class="portada-inner">
+        <p class="portada-saludo sans" data-campo="portadaSaludo">Estás invitado a celebrar</p>
+        <h1 class="portada-nombre script" data-campo="nombreHomenajeada">Tu Nombre</h1>
+        <p class="portada-evento serif" data-campo="portadaEvento">Mis Quince Años</p>
+        <p class="portada-fecha sans">
+          <span data-campo="fechaCorta"></span><span class="portada-fecha-sep" aria-hidden="true">·</span><span data-campo="hora"></span>
+        </p>
+        <div class="sobre-portada">
+          <img src="assets/images/sobre.svg" alt="Sobre de invitación con sello de corazón" class="sobre-portada-img">
+          <span class="sobre-portada-nube" aria-hidden="true"></span>
+        </div>
+        <p class="portada-pista sans">Toca para abrir tu invitación</p>
+        <button type="button" class="boton boton-oro" id="botonAbrir" aria-label="Abrir invitación e iniciar música">
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v11.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="15.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span>Iniciar invitación</span>
+        </button>
+      </div>
+      <p class="portada-caida sans">Los esperamos</p>
+    </section>
+
+    <!-- ================= CUENTA REGRESIVA ================= -->
+    <section class="seccion" id="faltan" aria-label="Cuenta regresiva para el evento">
+      <div class="contenedor reveal">
+        <p class="titulo-seccion sans-uo">Faltan</p>
+        <img class="divisor" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+        <div class="countdown" id="countdown" role="timer" aria-live="off">
+          <div class="count-bloque"><span class="count-num serif" id="cdDias">00</span><span class="count-lab sans-uo">Días</span></div>
+          <div class="count-bloque"><span class="count-num serif" id="cdHoras">00</span><span class="count-lab sans-uo">Horas</span></div>
+          <div class="count-bloque"><span class="count-num serif" id="cdMin">00</span><span class="count-lab sans-uo">Minutos</span></div>
+          <div class="count-bloque"><span class="count-num serif" id="cdSeg">00</span><span class="count-lab sans-uo">Segundos</span></div>
+        </div>
+        <p class="count-final serif-it" id="cdFinal" hidden>¡Llegó el gran día! Nos vemos muy pronto.</p>
+        <p class="count-sub sans" data-campo="countSub">para el gran día</p>
+      </div>
+    </section>
+
+    <!-- ================= RESERVA ESTE DÍA ================= -->
+    <section class="seccion" id="reserva" aria-label="Fecha y hora del evento">
+      <div class="contenedor reveal">
+        <p class="titulo-seccion sans-uo">Reserva este día</p>
+        <img class="divisor" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+        <div class="tarjeta calendario" id="calendario" role="group" aria-label="Calendario del mes del evento"></div>
+        <p class="fecha-grande serif"><span data-campo="fechaTexto"></span></p>
+        <p class="hora-badge sans-uo" data-campo="hora"></p>
+        <p class="nota sans" data-campo="notaReserva">¡Aparta la fecha y ven a la fiesta!</p>
+      </div>
+    </section>
+
+    <!-- ================= MIS PADRES ================= -->
+    <section class="seccion" id="padres" aria-label="Anfitriones de la celebración">
+      <div class="contenedor reveal">
+        <p class="titulo-seccion sans-uo">Mis padres</p>
+        <img class="divisor" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+        <div class="padres-fila">
+          <p class="padre" data-campo="padre1">Nombre</p>
+          <span class="padres-corazon" aria-hidden="true">&#9829;</span>
+          <p class="padre" data-campo="padre2">Nombre</p>
+        </div>
+        <div class="tarjeta concepto">
+          <span class="concepto-comilla serif" aria-hidden="true">&ldquo;</span>
+          <p class="serif-it" data-campo="concepto"></p>
+          <img class="divisor-pequeno" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LUGAR ================= -->
+    <section class="seccion" id="lugar" aria-label="Ubicación del evento">
+      <div class="contenedor reveal">
+        <p class="titulo-seccion sans-uo">Lugar</p>
+        <img class="divisor" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+        <img class="lugar-pin" src="assets/images/pin.svg" alt="Icono de ubicación">
+        <p class="lugar-nombre serif" data-campo="lugar"></p>
+        <p class="lugar-direccion sans" data-campo="direccion"></p>
+        <button type="button" class="boton boton-oro" id="botonUbicacion" aria-label="Ver ubicación en Google Maps">
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7-6.5-7-11a7 7 0 1 1 14 0c0 4.5-7 11-7 11Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span>Ver ubicación</span>
+        </button>
+        <p class="lugar-nota sans-it" id="lugarNota" data-campo="notaLugar"></p>
+      </div>
+    </section>
+
+    <!-- ================= CÓDIGO DE VESTIMENTA ================= -->
+    <section class="seccion" id="vestimenta" aria-label="Código de vestimenta">
+      <div class="contenedor reveal">
+        <p class="titulo-seccion sans-uo">Código de vestimenta</p>
+        <img class="divisor" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+        <img class="vestido" src="assets/images/vestido.svg" alt="Silueta de vestido elegante">
+        <p class="vestimenta-tipo serif" data-campo="vestimenta"></p>
+        <p class="vestimenta-desc sans" data-campo="vestimentaDesc"></p>
+        <ul class="recomendaciones" id="recomendaciones" aria-label="Recomendaciones"></ul>
+        <div class="paleta" id="paleta" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ================= LLUVIA DE SOBRES ================= -->
+    <section class="seccion sobres-seccion" id="sobres" aria-label="Información de regalos">
+      <div class="lluvia" aria-hidden="true" id="lluvia">
+        <span class="gotita g1"></span>
+        <span class="gotita g2"></span>
+        <span class="gotita g3"></span>
+        <span class="gotita g4"></span>
+        <span class="gotita g5"></span>
+        <span class="gotita g6"></span>
+      </div>
+      <div class="contenedor" id="sobresContenedor">
+        <div class="reveal">
+          <p class="titulo-seccion sans-uo" data-campo="sobreTitulo"></p>
+          <img class="divisor" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+          <div class="sobre-grande">
+            <img src="assets/images/sobre.svg" alt="Sobre de regalo" class="sobre-grande-img">
+          </div>
+          <p class="sobre-texto serif" data-campo="sobreTexto"></p>
+          <p class="sobre-nota sans" data-campo="sobreNota"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CIERRE ================= -->
+    <section class="seccion final" id="final" aria-label="Agradecimiento y despedida">
+      <div class="contenedor reveal">
+        <img class="corona-final" src="assets/images/corona.svg" alt="" aria-hidden="true">
+        <p class="final-despedida script" data-campo="despedida"></p>
+        <img class="divisor" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+        <p class="final-mensaje serif-it" data-campo="mensajeFinal"></p>
+        <p class="final-nombre script" data-campo="nombreHomenajeada"></p>
+        <p class="final-evento serif"><span data-campo="fechaTexto"></span> <span aria-hidden="true">&middot;</span> <span data-campo="hora"></span></p>
+        <p class="final-gracias sans" data-campo="gracias">¡Gracias por acompañarnos!</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie sans">
+    <p>Invitación digital &middot; <span data-campo="nombreHomenajeada"></span></p>
+  </footer>
+
+  <!-- Reproductor de música flotante -->
+  <button type="button" class="musica-btn" id="musicaBtn" aria-label="Reproducir música" aria-pressed="false">
+    <svg class="disco" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="18" fill="#FBF4E6" stroke="#A87F3F" stroke-width="1.6"/>
+      <circle cx="20" cy="20" r="7.5" fill="none" stroke="#A87F3F" stroke-width="1"/>
+      <circle cx="20" cy="20" r="2.6" fill="#A87F3F"/>
+    </svg>
+    <span class="ecualizador" aria-hidden="true"><i></i><i></i><i></i></span>
+  </button>
+
+  <!-- Aviso ligero (no emergente) -->
+  <p class="toast sans" id="toast" role="status" aria-live="polite" hidden></p>
+
+  <noscript>
+    <div style="font-family:sans-serif;padding:1.5rem;text-align:center;">Activa JavaScript para ver la invitación completa.</div>
+  </noscript>
+
+  <script src="js/invitacion.js"></script>
+</body>
+</html>

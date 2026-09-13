@@ -1,0 +1,824 @@
+/* ============================================================
+   INVITACIÓN DIGITAL · HOJA DE ESTILOS
+   Mobile-first · diseñada para 360px–430px
+   ============================================================ */
+
+:root {
+  --crema: #FBF6EE;
+  --crema-suave: #F4EBDC;
+  --crema-fondo: #FDF9F1;
+  --blanco: #FFFFFF;
+  --tinta: #4A3826;
+  --tinta-suave: #7C6246;
+  --tinta-clara: #A08A6B;
+  --oro: #B08D57;
+  --oro-claro: #C9AE7E;
+  --oro-suave: #F2E4C8;
+  --oro-linea: #DCC49A;
+  --rojo-corazon: #B94A38;
+  --verde-hoja: #7A8B63;
+  --sombra-suave: 0 10px 28px rgba(122, 98, 60, 0.14);
+
+  --serif: "Cormorant Garamond", "Times New Roman", serif;
+  --script: "Great Vibes", "Brush Script MT", cursive;
+  --sans: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--crema-fondo);
+  color: var(--tinta);
+  line-height: 1.6;
+  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
+}
+
+img { max-width: 100%; height: auto; display: inline-block; }
+ul { list-style: none; }
+button { font-family: inherit; cursor: pointer; border: 0; background: none; }
+
+.invitacion {
+  max-width: 520px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ---------- Tipografía utilitaria ---------- */
+.serif { font-family: var(--serif); }
+.serif-it { font-family: var(--serif); font-style: italic; }
+.script { font-family: var(--script); font-weight: 400; }
+.sans { font-family: var(--sans); }
+.sans-uo { font-family: var(--sans); text-transform: uppercase; letter-spacing: 0.22em; }
+.sans-it { font-family: var(--sans); font-style: italic; }
+
+/* ---------- Sección genérica ---------- */
+.seccion {
+  padding: 66px 22px 62px;
+  position: relative;
+}
+
+.contenedor {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.titulo-seccion {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--oro);
+}
+
+.divisor {
+  width: 320px;
+  max-width: 88%;
+  margin: 14px auto 26px;
+  display: block;
+  animation: aparecer 0.9s ease both;
+}
+
+/* ---------- Tarjeta genérica ---------- */
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid var(--oro-linea);
+  border-radius: 20px;
+  box-shadow: var(--sombra-suave);
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blanco);
+  background: linear-gradient(135deg, #C39A5B, #A87F3F);
+  box-shadow: 0 12px 24px rgba(168, 127, 63, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+.boton:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.boton:active { transform: translateY(0) scale(0.98); }
+.boton:focus-visible { outline: 2px solid var(--tinta); outline-offset: 3px; }
+.boton .icono { width: 18px; height: 18px; }
+
+/* ============================================================
+   PORTADA
+   ============================================================ */
+.portada {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  padding: 96px 20px calc(24px + env(safe-area-inset-bottom));
+  background:
+    radial-gradient(120% 80% at 50% 0%, #FFFDF7 0%, var(--crema) 45%, #F3E7CD 100%);
+  overflow: hidden;
+}
+
+.portada::before,
+.portada::after {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  pointer-events: none;
+  opacity: 0.55;
+}
+.portada::before {
+  top: calc(14px + env(safe-area-inset-top));
+  left: 14px;
+  border-top: 1.4px solid var(--oro-linea);
+  border-left: 1.4px solid var(--oro-linea);
+  border-top-left-radius: 26px;
+}
+.portada::after {
+  bottom: 20px;
+  right: 14px;
+  border-bottom: 1.4px solid var(--oro-linea);
+  border-right: 1.4px solid var(--oro-linea);
+  border-bottom-right-radius: 26px;
+}
+
+.portada-corona {
+  width: min(86%, 340px);
+  opacity: 0.9;
+  animation: flotar 6s ease-in-out infinite;
+}
+
+.portada-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -6px;
+}
+
+.portada-saludo {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--oro);
+  animation: aparicion 1s 0.15s ease both;
+}
+
+.portada-nombre {
+  font-size: clamp(56px, 17vw, 88px);
+  line-height: 1.02;
+  color: var(--tinta);
+  margin: 10px 0 2px;
+  animation: aparicion 1s 0.4s ease both;
+}
+
+.portada-evento {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  text-transform: uppercase;
+  color: var(--oro);
+  animation: aparicion 1s 0.55s ease both;
+}
+
+.portada-fecha {
+  margin-top: 14px;
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  animation: aparicion 1s 0.7s ease both;
+}
+.portada-fecha-sep { margin: 0 8px; color: var(--oro); }
+
+.sobre-portada {
+  position: relative;
+  margin: 34px 0 6px;
+  animation: aparicion 1s 0.85s ease both;
+}
+.sobre-portada-img {
+  width: min(56%, 190px);
+  filter: drop-shadow(0 14px 20px rgba(168, 127, 63, 0.28));
+  animation: bob 3.4s ease-in-out infinite;
+}
+.sobre-portada-nube {
+  position: absolute;
+  inset: -8px -16px;
+  border: 1.4px dashed var(--oro-claro);
+  border-radius: 40px;
+  opacity: 0.6;
+}
+
+.portada-pista {
+  margin-top: 12px;
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--tinta-clara);
+  animation: aparicion 1s 1s ease both;
+}
+
+#botonAbrir {
+  margin-top: 20px;
+  animation: aparicion 1s 1.15s ease both;
+}
+
+.portada-caida {
+  position: absolute;
+  bottom: calc(12px + env(safe-area-inset-bottom));
+  font-size: 10.5px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--tinta-clara);
+  opacity: 0;
+  animation: aparicion 1s 1.5s ease both;
+}
+
+/* ============================================================
+   CUENTA REGRESIVA
+   ============================================================ */
+#faltan { background: var(--crema); }
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 380px;
+  margin: 0 auto 14px;
+}
+
+.count-bloque {
+  background: var(--blanco);
+  border: 1px solid var(--oro-linea);
+  border-radius: 16px;
+  box-shadow: var(--sombra-suave);
+  padding: 16px 4px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 88px;
+}
+
+.count-num {
+  font-size: clamp(32px, 9.5vw, 42px);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--tinta);
+  background: linear-gradient(180deg, #B08D57, #7C5E2E);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.count-lab {
+  margin-top: 8px;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--oro);
+}
+
+.count-final {
+  font-size: 21px;
+  color: var(--oro);
+  margin: 6px auto 14px;
+}
+
+.count-sub {
+  font-size: 12.5px;
+  color: var(--tinta-clara);
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+   RESERVA ESTE DÍA · CALENDARIO
+   ============================================================ */
+#reserva { background: var(--crema-fondo); }
+
+.calendario {
+  max-width: 340px;
+  margin: 0 auto 22px;
+  padding: 20px 16px 18px;
+}
+
+.cal-mes {
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--tinta);
+  letter-spacing: 0.04em;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--oro-suave);
+}
+
+.cal-semana,
+.cal-dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.cal-semana { text-align: center; }
+.cal-semana span {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--oro);
+  padding: 4px 0;
+}
+
+.cal-dias button {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-family: var(--serif);
+  font-size: 14.5px;
+  color: var(--tinta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+.cal-dias button:hover { transform: scale(1.08); }
+
+.cal-dias .d-vacio { visibility: hidden; }
+.cal-dias .d-otro { color: var(--tinta-clara); }
+
+.cal-dias .d-evento {
+  background: linear-gradient(135deg, #C39A5B, #A87F3F);
+  color: var(--blanco);
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(168, 127, 63, 0.42);
+}
+
+.fecha-grande {
+  font-size: clamp(34px, 10.5vw, 48px);
+  font-weight: 600;
+  color: var(--tinta);
+}
+
+.hora-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 22px;
+  border-radius: 999px;
+  background: var(--oro-suave);
+  border: 1px solid var(--oro-linea);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--oro);
+}
+
+.nota { margin-top: 16px; font-size: 12.5px; color: var(--tinta-clara); }
+
+/* ============================================================
+   MIS PADRES · CONCEPTO
+   ============================================================ */
+#padres { background: var(--crema); }
+
+.padres-fila {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.padre {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinta);
+}
+
+.padres-corazon {
+  color: var(--rojo-corazon);
+  font-size: 17px;
+  animation: latir 1.8s ease-in-out infinite;
+}
+
+.concepto {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px 24px 26px;
+  position: relative;
+}
+
+.concepto-comilla {
+  position: absolute;
+  top: 6px;
+  left: 18px;
+  font-size: 60px;
+  line-height: 1;
+  color: var(--oro-claro);
+}
+
+.concepto p {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--tinta-suave);
+  position: relative;
+}
+
+.divisor-pequeno {
+  width: 130px;
+  margin: 18px auto 0;
+  display: block;
+}
+
+/* ============================================================
+   LUGAR
+   ============================================================ */
+#lugar { background: var(--crema-fondo); }
+
+.lugar-pin {
+  width: 64px;
+  animation: bob 3s ease-in-out infinite;
+}
+
+.lugar-nombre {
+  margin-top: 10px;
+  font-size: clamp(24px, 7.5vw, 32px);
+  font-weight: 600;
+  color: var(--tinta);
+}
+
+.lugar-direccion {
+  margin: 6px 0 24px;
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+
+.lugar-nota {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--tinta-clara);
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================
+   CÓDIGO DE VESTIMENTA
+   ============================================================ */
+#vestimenta { background: var(--crema); }
+
+.vestido {
+  width: min(52%, 150px);
+  filter: drop-shadow(0 12px 16px rgba(168, 127, 63, 0.22));
+  animation: basta 2.6s ease-in-out infinite;
+}
+
+.vestimenta-tipo {
+  margin-top: 14px;
+  font-size: clamp(26px, 8vw, 36px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--oro);
+}
+
+.vestimenta-desc {
+  max-width: 360px;
+  margin: 10px auto 20px;
+  font-size: 13.5px;
+  color: var(--tinta-suave);
+}
+
+.recomendaciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.recomendaciones li {
+  background: var(--blanco);
+  border: 1px solid var(--oro-linea);
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-size: 11.5px;
+  letter-spacing: 0.05em;
+  color: var(--tinta-suave);
+}
+
+.paleta {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.paleta i {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--blanco);
+  box-shadow: 0 0 0 1px var(--oro-linea);
+}
+
+/* ============================================================
+   LLUVIA DE SOBRES
+   ============================================================ */
+.sobres-seccion {
+  background: linear-gradient(180deg, var(--crema) 0%, #F4E9D4 100%);
+  overflow: hidden;
+}
+
+.lluvia {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.gotita {
+  position: absolute;
+  top: -40px;
+  width: 12px;
+  height: 12px;
+  opacity: 0;
+  border-radius: 4px 50% 50% 50%;
+  background: linear-gradient(135deg, var(--oro-claro), var(--oro));
+  animation: caer var(--dur, 9s) linear infinite;
+}
+.gotita::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--blanco);
+  opacity: 0.65;
+}
+.g1  { left: 6%;  --dur: 11s; animation-delay: 0s; }
+.g2  { left: 18%; --dur: 9s;  animation-delay: 2.2s; }
+.g3  { left: 33%; --dur: 12s; animation-delay: 0.8s; }
+.g4  { left: 52%; --dur: 10s; animation-delay: 3.4s; }
+.g5  { left: 70%; --dur: 11.5s; animation-delay: 1.6s; }
+.g6  { left: 86%; --dur: 9.5s; animation-delay: 2.8s; }
+
+.sobre-grande {
+  margin-bottom: 8px;
+}
+.sobre-grande-img {
+  width: min(48%, 170px);
+  filter: drop-shadow(0 14px 22px rgba(168, 127, 63, 0.3));
+  animation: bob 3.6s ease-in-out infinite;
+}
+
+.sobre-texto {
+  max-width: 380px;
+  margin: 8px auto 10px;
+  font-size: clamp(21px, 6.5vw, 27px);
+  font-weight: 600;
+  color: var(--tinta);
+}
+
+.sobre-nota {
+  max-width: 340px;
+  margin: 0 auto;
+  font-size: 12.5px;
+  color: var(--tinta-suave);
+}
+
+/* ============================================================
+   CIERRE
+   ============================================================ */
+.final {
+  background:
+    radial-gradient(120% 80% at 50% 0%, #FFFDF7 0%, var(--crema) 45%, #F2E6CD 100%);
+  padding-top: 80px;
+  padding-bottom: 90px;
+}
+
+.corona-final {
+  width: min(84%, 320px);
+  margin: 0 auto 4px;
+  display: block;
+  animation: flotar 7s ease-in-out infinite;
+}
+
+.final-despedida {
+  font-size: clamp(48px, 15vw, 78px);
+  line-height: 1.05;
+  color: var(--oro);
+  margin-bottom: 4px;
+}
+
+.final-mensaje {
+  max-width: 380px;
+  margin: 18px auto 0;
+  font-size: 17.5px;
+  font-weight: 500;
+  color: var(--tinta-suave);
+}
+
+.final-nombre {
+  margin-top: 16px;
+  font-size: clamp(44px, 13vw, 64px);
+  line-height: 1;
+  color: var(--tinta);
+}
+
+.final-evento {
+  margin-top: 10px;
+  font-size: 13.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--oro);
+}
+
+.final-gracias {
+  margin-top: 22px;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--tinta-clara);
+}
+
+/* ============================================================
+   PIE
+   ============================================================ */
+.pie {
+  padding: 22px 16px calc(22px + env(safe-area-inset-bottom));
+  text-align: center;
+  background: var(--crema-fondo);
+  border-top: 1px solid var(--oro-suave);
+}
+.pie p { font-size: 10.5px; letter-spacing: 0.14em; color: var(--tinta-clara); }
+
+/* ============================================================
+   MUSICA FLOTANTE
+   ============================================================ */
+.musica-btn {
+  position: fixed;
+  right: calc(16px + env(safe-area-inset-right));
+  bottom: calc(18px + env(safe-area-inset-bottom));
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--blanco);
+  border: 1.6px solid var(--oro-claro);
+  box-shadow: 0 10px 22px rgba(122, 98, 60, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+  opacity: 0;
+  transform: translateY(16px) scale(0.9);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.musica-btn.visible { opacity: 1; transform: none; }
+.musica-btn:focus-visible { outline: 2px solid var(--tinta); outline-offset: 3px; }
+
+.disco {
+  width: 38px;
+  height: 38px;
+}
+.musica-btn.reproduciendo .disco { animation: girar 8s linear infinite; }
+
+.ecualizador {
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 14px;
+  padding: 2px;
+  background: var(--blanco);
+  border: 1px solid var(--oro-linea);
+  border-radius: 6px;
+}
+.ecualizador i {
+  width: 3px;
+  height: 4px;
+  background: var(--oro);
+  border-radius: 2px;
+  animation: ecualizar 1s ease-in-out infinite;
+}
+.ecualizador i:nth-child(2) { animation-delay: 0.22s; }
+.ecualizador i:nth-child(3) { animation-delay: 0.44s; }
+.musica-btn:not(.reproduciendo) .ecualizador i { animation-play-state: paused; height: 4px; opacity: 0.5; }
+
+/* ============================================================
+   TOAST (aviso no emergente)
+   ============================================================ */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(88px + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  max-width: 86%;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(74, 56, 38, 0.92);
+  color: var(--crema);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  z-index: 70;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.toast.mostrar { opacity: 1; }
+
+/* ============================================================
+   APPEARANCE / REVEAL
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   ANIMACIONES
+   ============================================================ */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes aparicion {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+@keyframes latir {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.22); }
+}
+@keyframes basta {
+  0%, 100% { transform: rotate(-2deg); }
+  50%      { transform: rotate(2deg); }
+}
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+@keyframes ecualizar {
+  0%, 100% { height: 4px; }
+  50%      { height: 12px; }
+}
+@keyframes caer {
+  0%   { transform: translateY(-40px) rotate(-8deg); opacity: 0; }
+  10%  { opacity: 0.7; }
+  90%  { opacity: 0.7; }
+  100% { transform: translateY(480px) rotate(14deg); opacity: 0; }
+}
+
+/* ============================================================
+   ESCRITORIO
+   ============================================================ */
+@media (min-width: 700px) {
+  .seccion { padding: 92px 24px; }
+  .count-num { font-size: 42px; }
+  .padre { font-size: 20px; }
+  .musica-btn { right: calc(28px + env(safe-area-inset-right)); }
+}
+
+/* ============================================================
+   MOVIMIENTO REDUCIDO
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

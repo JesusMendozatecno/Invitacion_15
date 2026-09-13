@@ -1,0 +1,6 @@
+Coloca aquí el archivo de música, por ejemplo:
+
+  assets/music/cancion.mp3
+
+La ruta se configura en js/invitacion.js dentro del objeto INVITACION.musica.
+Si el archivo no existe, la invitación funciona igualmente (el botón de música se deshabilita con elegancia).

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 150" width="360" height="150" role="presentation">
+  <defs>
+    <linearGradient id="gcor" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#D9B97E"/>
+      <stop offset="0.5" stop-color="#A87F3F"/>
+      <stop offset="1" stop-color="#D9B97E"/>
+    </linearGradient>
+  </defs>
+  <path d="M16 120 C26 42 108 12 180 42 C252 12 334 42 344 120" stroke="#B08D57" stroke-width="2.4" fill="none"/>
+  <path d="M16 120 C32 58 94 26 162 34" stroke="#C9AE7E" stroke-width="1.2" fill="none"/>
+  <path d="M344 120 C328 58 266 26 198 34" stroke="#C9AE7E" stroke-width="1.2" fill="none"/>
+  <ellipse cx="46" cy="100" rx="14" ry="6" transform="rotate(-46 46 100)" fill="#A8B88A" opacity="0.85"/>
+  <ellipse cx="76" cy="72" rx="14" ry="6" transform="rotate(-66 76 72)" fill="#9CAF82" opacity="0.8"/>
+  <ellipse cx="118" cy="48" rx="14" ry="6" transform="rotate(-82 118 48)" fill="#A8B88A" opacity="0.85"/>
+  <ellipse cx="176" cy="40" rx="15" ry="6" transform="rotate(-90 176 40)" fill="#9CAF82" opacity="0.8"/>
+  <ellipse cx="242" cy="44" rx="14" ry="6" transform="rotate(-100 242 44)" fill="#A8B88A" opacity="0.85"/>
+  <ellipse cx="288" cy="68" rx="14" ry="6" transform="rotate(-120 288 68)" fill="#9CAF82" opacity="0.8"/>
+  <ellipse cx="318" cy="100" rx="14" ry="6" transform="rotate(-140 318 100)" fill="#A8B88A" opacity="0.85"/>
+  <g fill="#C9AE7E">
+    <circle cx="102" cy="54" r="5"/>
+    <circle cx="112" cy="60" r="5"/>
+    <circle cx="110" cy="47" r="5"/>
+    <circle cx="118" cy="58" r="5"/>
+  </g>
+  <g fill="#D9B97E">
+    <circle cx="180" cy="36" r="6"/>
+    <circle cx="170" cy="44" r="6"/>
+    <circle cx="192" cy="44" r="6"/>
+    <circle cx="183" cy="50" r="6"/>
+  </g>
+  <g fill="#C9AE7E">
+    <circle cx="248" cy="56" r="5"/>
+    <circle cx="258" cy="62" r="5"/>
+    <circle cx="256" cy="49" r="5"/>
+    <circle cx="264" cy="60" r="5"/>
+  </g>
+  <circle cx="180" cy="40" r="9" fill="#F4E7CB" stroke="#B08D57" stroke-width="1.6"/>
+  <circle cx="180" cy="40" r="3" fill="#B94A38" opacity="0.8"/>
+  <path d="M28 118 C44 88 84 60 150 42 M332 118 C316 88 276 60 210 42" stroke="url(#gcor)" stroke-width="1.3" fill="none" opacity="0.7"/>
+</svg>
