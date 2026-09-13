@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 170" width="240" height="170" role="img" aria-label="Sobre de invitación con sello de corazón">
   <defs>
     <linearGradient id="gsobre" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#FFF7F0"/>
-      <stop offset="1" stop-color="#F9E3EC"/>
+      <stop offset="0" stop-color="#FBF3FE"/>
+      <stop offset="1" stop-color="#EBDCF7"/>
     </linearGradient>
   </defs>
-  <rect x="16" y="18" width="208" height="134" rx="10" fill="url(#gsobre)" stroke="#C9A272" stroke-width="2"/>
-  <path d="M16 18 L120 96 L224 18 Z" fill="#FFFDFA" stroke="#E3B8C8" stroke-width="1.5" stroke-linejoin="round"/>
-  <path d="M16 152 L120 88 L224 152" fill="none" stroke="#E3B8C8" stroke-width="1.5" stroke-linejoin="round"/>
-  <path d="M120 58 L120 92" stroke="#E9C7D6" stroke-width="1.4"/>
-  <path d="M120 62 C108 48 90 55 90 70 C90 83 120 98 120 98 C120 98 150 83 150 70 C150 55 132 48 120 62 Z" fill="#D97F9F" opacity="0.9"/>
-  <circle cx="42" cy="52" r="2.4" fill="#C9A272"/>
-  <circle cx="200" cy="122" r="2.4" fill="#C9A272"/>
-  <path d="M40 128 l0 8 M36 132 l8 0 M196 32 l0 8 M192 36 l8 0" stroke="#E9C7D6" stroke-width="1.4" stroke-linecap="round"/>
+  <rect x="16" y="18" width="208" height="134" rx="10" fill="url(#gsobre)" stroke="#D4A437" stroke-width="2"/>
+  <path d="M16 18 L120 96 L224 18 Z" fill="#FFFDFA" stroke="#C9A4E0" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M16 152 L120 88 L224 152" fill="none" stroke="#C9A4E0" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M120 58 L120 92" stroke="#D4B8EA" stroke-width="1.4"/>
+  <path d="M120 62 C108 48 90 55 90 70 C90 83 120 98 120 98 C120 98 150 83 150 70 C150 55 132 48 120 62 Z" fill="#A757CF" opacity="0.9"/>
+  <circle cx="42" cy="52" r="2.4" fill="#D4A437"/>
+  <circle cx="200" cy="122" r="2.4" fill="#D4A437"/>
+  <path d="M40 128 l0 8 M36 132 l8 0 M196 32 l0 8 M192 36 l8 0" stroke="#D4B8EA" stroke-width="1.4" stroke-linecap="round"/>
 </svg>
