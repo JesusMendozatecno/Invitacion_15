@@ -23,9 +23,27 @@
 
   <main class="invitacion">
 
+    <!-- ============ SOBRE DE APERTURA (se abre al tocar) ============ -->
+    <div class="sobre-apertura" id="sobreApertura" role="button" tabindex="0" aria-label="Toca para abrir la invitación">
+      <div class="sobre-apertura-inner">
+        <img class="sobre-apertura-corona" src="assets/images/corona.svg" alt="" aria-hidden="true" aria-hidden="true">
+        <p class="sobre-apertura-top sans">Invitación especial</p>
+        <div class="sobre-apertura-nombre script" data-campo="nombreHomenajeada">Isabella Romero</div>
+        <div class="sobre-uno">
+          <img class="sobre-uno-img" src="assets/images/sobre.svg" alt="Sobre de invitación cerrado con sello de corazón" role="img">
+          <span class="sobre-uno-sello serif" aria-hidden="true">&#9829;</span>
+          <span class="sobre-uno-flap" aria-hidden="true"></span>
+        </div>
+        <p class="sobre-apertura-sub sans">Toca el sobre para abrir tu invitación</p>
+      </div>
+      <p class="sobre-apertura-pie sans"><span aria-hidden="true">&#10048;</span> Enredados · Isabella Romero</p>
+    </div>
+
     <!-- ================= PORTADA ================= -->
     <section class="portada" id="portada" aria-label="Portada de la invitación">
       <img class="portada-corona" src="assets/images/corona.svg" alt="" aria-hidden="true">
+      <img class="gota-sol gota-sol-a" src="assets/images/gota-de-sol.svg" alt="" aria-hidden="true">
+      <img class="gota-sol gota-sol-b" src="assets/images/gota-de-sol.svg" alt="" aria-hidden="true">
       <div class="portada-inner">
         <p class="portada-saludo sans" data-campo="portadaSaludo">Estás invitado a celebrar</p>
         <h1 class="portada-nombre script" data-campo="nombreHomenajeada">Tu Nombre</h1>
@@ -33,6 +51,18 @@
         <p class="portada-fecha sans">
           <span data-campo="fechaCorta"></span><span class="portada-fecha-sep" aria-hidden="true">·</span><span data-campo="hora"></span>
         </p>
+        <div class="sobre-pequeno">
+          <img src="assets/images/sobre.svg" alt="" aria-hidden="true" class="sobre-pequeno-img">
+          <span class="sobre-pequeno-nube" aria-hidden="true"></span>
+        </div>
+        <p class="portada-pista sans">Toca para girar la invitación</p>
+        <button type="button" class="boton boton-oro" id="botonAbrir" aria-label="Abrir invitación e iniciar música">
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v11.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="15.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span>Iniciar invitación</span>
+        </button>
+      </div>
+      <p class="portada-caida sans">Los esperamos</p>
+    </section>
         <div class="sobre-portada">
           <img src="assets/images/sobre.svg" alt="Sobre de invitación con sello de corazón" class="sobre-portada-img">
           <span class="sobre-portada-nube" aria-hidden="true"></span>

@@ -340,6 +340,33 @@ function iniciarFlotante() {
 }
 
 /* ============================================================
+   SOBRE DE APERTURA
+   ============================================================ */
+
+function abrirSobre() {
+  const apertura = $("#sobreApertura");
+  if (!apertura || apertura.classList.contains("abierto")) return;
+  apertura.classList.add("abierto");
+  Musica.alternar();
+  setTimeout(() => {
+    apertura.classList.add("oculto");
+    $("#faltan").scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 900);
+}
+
+function iniciarSobre() {
+  const apertura = $("#sobreApertura");
+  if (!apertura) return;
+  apertura.addEventListener("click", abrirSobre);
+  apertura.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      abrirSobre();
+    }
+  });
+}
+
+/* ============================================================
    BOTÓN DE PORTADA
    ============================================================ */
 
@@ -362,6 +389,7 @@ document.addEventListener("DOMContentLoaded", () => {
   iniciarReveal();
   iniciarUbicacion();
   iniciarFlotante();
+  iniciarSobre();
   iniciarPortada();
   Musica.crear();
 });

@@ -33,6 +33,172 @@
   --sans: "Poppins", "Segoe UI", Arial, sans-serif;
 }
 
+/* ============================================================
+   SOBRE PREMIUM «GOTA DE SOL» (Enredados · Isabella Romero)
+   Pantalla de apertura: el sobre que se abre al tocar
+   ============================================================ */
+
+.sobre-apertura {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 24px calc(24px + env(safe-area-inset-bottom));
+  background:
+    radial-gradient(120% 75% at 50% -5%, #2E1B3F 0%, var(--purpura-osc) 48%, #1B0F26 100%);
+  color: var(--champan);
+  cursor: pointer;
+  overflow: hidden;
+  transition: opacity 1s ease 0.4s, visibility 1s ease 0.4s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* velo dorado difuminado + gotas de sol */
+.sobre-apertura::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 42% at 50% 12%, rgba(224,185,79,0.16), transparent 70%),
+    linear-gradient(180deg, transparent, rgba(255,253,252,0.05));
+  pointer-events: none;
+}
+.sobre-apertura::after {
+  content: "";
+  position: absolute;
+  inset: -25% -10%;
+  background-image: url("assets/images/gota-de-sol.svg");
+  background-size: 46px auto;
+  background-repeat: repeat;
+  opacity: 0.08;
+  pointer-events: none;
+  animation: girar 90s linear infinite;
+}
+
+.sobre-apertura-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.sobre-apertura-corona {
+  width: min(34%, 130px);
+  opacity: 0.95;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35)) drop-shadow(0 0 22px rgba(224,185,79,0.28));
+  margin-bottom: -6px;
+  animation: flotar 6s ease-in-out infinite;
+}
+
+.sobre-apertura-top {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--oro-claro);
+  margin: 8px 0 2px;
+}
+
+.sobre-apertura-nombre {
+  font-size: clamp(44px, 14vw, 64px);
+  line-height: 1.1;
+  color: var(--champan);
+  text-shadow: 0 3px 16px rgba(23,15,38,0.55), 0 0 34px rgba(224,185,79,0.32);
+  margin: 6px 0 18px;
+}
+
+/* -------- el sobre (sobre-uno) -------- */
+.sobre-uno {
+  position: relative;
+  width: min(62%, 230px);
+  perspective: 1200px;
+  margin: 0 auto 22px;
+}
+
+.sobre-uno-img {
+  width: 100%;
+  display: block;
+  filter: drop-shadow(0 18px 26px rgba(10,5,16,0.5));
+  animation: flotar 4.5s ease-in-out infinite;
+}
+
+.sobre-uno-sello {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  font-size: 17px;
+  color: var(--lavanda);
+  background: radial-gradient(circle at 30% 30%, var(--oro-suave), var(--oro) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 2px 4px rgba(10,5,16,0.5));
+  animation: latir 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* solapa del sobre (se levanta al abrir) */
+.sobre-uno-flap {
+  position: absolute;
+  top: 6%;
+  left: 7%;
+  width: 86%;
+  height: 44%;
+  z-index: 2;
+  border-radius: 48% 48% 4px 4px;
+  transform-origin: top center;
+  background: linear-gradient(180deg, #B88A5A, #D9AF74 68%, #C79A52);
+  box-shadow: inset 0 -14px 22px rgba(107,51,15,0.38);
+  clip-path: polygon(0 0, 100% 0, 72% 82%, 50% 100%, 28% 82%);
+  transition: transform 0.7s cubic-bezier(0.68, -0.3, 0.26, 1.2);
+  pointer-events: none;
+}
+
+.sobre-apertura-sub {
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  color: var(--oro-suave);
+  margin: 0;
+}
+
+.sobre-apertura-pie {
+  position: relative;
+  z-index: 1;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  color: var(--champan);
+  opacity: 0.85;
+  margin-top: 26px;
+}
+
+/* -------- estado ABIERTO -------- */
+.sobre-apertura.abierto .sobre-uno-flap {
+  transform: rotateX(-148deg);
+}
+.sobre-apertura.abierto .sobre-uno-sello {
+  animation: latir 0.4s 0.55s ease 1;
+}
+.sobre-apertura.abierto .sobre-uno-img {
+  animation: girar-apertura 0.8s 0.15s ease both;
+}
+.sobre-apertura.oculto {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@keyframes girar-apertura {
+  0%   { transform: rotateY(0); }
+  100% { transform: rotateY(180deg); }
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
