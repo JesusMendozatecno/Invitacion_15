@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Favicon invitación">
-  <rect x="4" y="4" width="56" height="56" rx="14" fill="#A87F3F"/>
-  <path d="M32 30 C26 22 14 26 14 36 C14 46 32 54 32 54 C32 54 50 46 50 36 C50 26 38 22 32 30 Z" fill="#FBF4E6"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="#F6C8D6"/>
+  <path d="M32 30 C26 22 14 26 14 36 C14 46 32 54 32 54 C32 54 50 46 50 36 C50 26 38 22 32 30 Z" fill="#E89DB9"/>
+  <circle cx="28" cy="26" r="4" fill="#F3B7CB"/>
+  <circle cx="36" cy="26" r="4" fill="#F3B7CB"/>
+  <path d="M30 46 C 42 40 48 30 46 22 C 40 28 36 36 30 46 Z" fill="#8C9C7E"/>
 </svg>

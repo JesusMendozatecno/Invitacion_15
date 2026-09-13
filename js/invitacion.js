@@ -350,7 +350,7 @@ function abrirSobre() {
   Musica.alternar();
   setTimeout(() => {
     apertura.classList.add("oculto");
-    $("#faltan").scrollIntoView({ behavior: "smooth", block: "start" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, 900);
 }
 
@@ -372,7 +372,6 @@ function iniciarSobre() {
 
 function iniciarPortada() {
   $("#botonAbrir").addEventListener("click", () => {
-    Musica.alternar();
     $("#faltan").scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }

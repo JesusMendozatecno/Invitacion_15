@@ -7,7 +7,7 @@
 
   <!-- Metadata para compartir en WhatsApp / redes -->
   <meta name="description" content="Te invito a celebrar este día tan especial conmigo. Reserva la fecha, checa la ubicación y ven a disfrutar.">
-  <meta name="theme-color" content="#A87F3F">
+  <meta name="theme-color" content="#F6C8D6">
   <meta property="og:title" content="Isabella Romero · Mis Quince Años">
   <meta property="og:description" content="Reserva este día, checa la cuenta regresiva y descubre todos los detalles de la fiesta.">
   <meta property="og:type" content="website">
@@ -25,8 +25,12 @@
 
     <!-- ============ SOBRE DE APERTURA (se abre al tocar) ============ -->
     <div class="sobre-apertura" id="sobreApertura" role="button" tabindex="0" aria-label="Toca para abrir la invitación">
+      <img class="mariposa m-sobre-a" src="assets/images/mariposa.svg" alt="" aria-hidden="true">
+      <img class="mariposa m-sobre-b" src="assets/images/mariposa.svg" alt="" aria-hidden="true">
+      <span class="destello ds-a" aria-hidden="true"></span>
+      <span class="destello ds-b" aria-hidden="true"></span>
       <div class="sobre-apertura-inner">
-        <img class="sobre-apertura-corona" src="assets/images/corona.svg" alt="" aria-hidden="true" aria-hidden="true">
+        <img class="sobre-apertura-corona" src="assets/images/corona-floral.svg" alt="" aria-hidden="true">
         <p class="sobre-apertura-top sans">Invitación especial</p>
         <div class="sobre-apertura-nombre script" data-campo="nombreHomenajeada">Isabella Romero</div>
         <div class="sobre-uno">
@@ -41,46 +45,39 @@
 
     <!-- ================= PORTADA ================= -->
     <section class="portada" id="portada" aria-label="Portada de la invitación">
-      <img class="portada-corona" src="assets/images/corona.svg" alt="" aria-hidden="true">
-      <img class="gota-sol gota-sol-a" src="assets/images/gota-de-sol.svg" alt="" aria-hidden="true">
-      <img class="gota-sol gota-sol-b" src="assets/images/gota-de-sol.svg" alt="" aria-hidden="true">
+      <img class="marco-floral" src="assets/images/marco-floral.svg" alt="" aria-hidden="true">
+      <img class="mariposa mariposa-a" src="assets/images/mariposa.svg" alt="" aria-hidden="true">
+      <img class="mariposa mariposa-b" src="assets/images/mariposa.svg" alt="" aria-hidden="true">
+      <img class="mariposa mariposa-c" src="assets/images/mariposa.svg" alt="" aria-hidden="true">
+      <span class="destello d1" aria-hidden="true"></span>
+      <span class="destello d2" aria-hidden="true"></span>
+      <span class="destello d3" aria-hidden="true"></span>
+      <span class="linea-floral linea-floral-izq" aria-hidden="true"></span>
+      <span class="linea-floral linea-floral-der" aria-hidden="true"></span>
       <div class="portada-inner">
+        <img class="portada-corona" src="assets/images/corona-floral.svg" alt="" aria-hidden="true">
         <p class="portada-saludo sans" data-campo="portadaSaludo">Estás invitado a celebrar</p>
         <h1 class="portada-nombre script" data-campo="nombreHomenajeada">Tu Nombre</h1>
         <p class="portada-evento serif" data-campo="portadaEvento">Mis Quince Años</p>
         <p class="portada-fecha sans">
           <span data-campo="fechaCorta"></span><span class="portada-fecha-sep" aria-hidden="true">·</span><span data-campo="hora"></span>
         </p>
-        <div class="sobre-pequeno">
-          <img src="assets/images/sobre.svg" alt="" aria-hidden="true" class="sobre-pequeno-img">
-          <span class="sobre-pequeno-nube" aria-hidden="true"></span>
-        </div>
         <p class="portada-pista sans">Toca para girar la invitación</p>
         <button type="button" class="boton boton-oro" id="botonAbrir" aria-label="Abrir invitación e iniciar música">
           <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v11.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="15.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
           <span>Iniciar invitación</span>
         </button>
       </div>
-      <p class="portada-caida sans">Los esperamos</p>
-    </section>
-        <div class="sobre-portada">
-          <img src="assets/images/sobre.svg" alt="Sobre de invitación con sello de corazón" class="sobre-portada-img">
-          <span class="sobre-portada-nube" aria-hidden="true"></span>
-        </div>
-        <p class="portada-pista sans">Toca para abrir tu invitación</p>
-        <button type="button" class="boton boton-oro" id="botonAbrir" aria-label="Abrir invitación e iniciar música">
-          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v11.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="15.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          <span>Iniciar invitación</span>
-        </button>
-      </div>
+      <img class="quinceanera" src="assets/images/quinceanera.svg" alt="Ilustración de la quinceañera con vestido de gala">
       <p class="portada-caida sans">Los esperamos</p>
     </section>
 
     <!-- ================= CUENTA REGRESIVA ================= -->
     <section class="seccion" id="faltan" aria-label="Cuenta regresiva para el evento">
+      <img class="marco-floral" src="assets/images/marco-floral.svg" alt="" aria-hidden="true">
       <div class="contenedor reveal">
         <p class="titulo-seccion sans-uo">Faltan</p>
-        <img class="divisor" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+        <img class="divisor" src="assets/images/divisor-floral.svg" alt="" aria-hidden="true">
         <div class="countdown" id="countdown" role="timer" aria-live="off">
           <div class="count-bloque"><span class="count-num serif" id="cdDias">00</span><span class="count-lab sans-uo">Días</span></div>
           <div class="count-bloque"><span class="count-num serif" id="cdHoras">00</span><span class="count-lab sans-uo">Horas</span></div>
@@ -94,9 +91,10 @@
 
     <!-- ================= RESERVA ESTE DÍA ================= -->
     <section class="seccion" id="reserva" aria-label="Fecha y hora del evento">
+      <img class="marco-floral" src="assets/images/marco-floral.svg" alt="" aria-hidden="true">
       <div class="contenedor reveal">
         <p class="titulo-seccion sans-uo">Reserva este día</p>
-        <img class="divisor" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+        <img class="divisor" src="assets/images/divisor-floral.svg" alt="" aria-hidden="true">
         <div class="tarjeta calendario" id="calendario" role="group" aria-label="Calendario del mes del evento"></div>
         <p class="fecha-grande serif"><span data-campo="fechaTexto"></span></p>
         <p class="hora-badge sans-uo" data-campo="hora"></p>
@@ -106,9 +104,10 @@
 
     <!-- ================= MIS PADRES ================= -->
     <section class="seccion" id="padres" aria-label="Anfitriones de la celebración">
+      <img class="marco-floral" src="assets/images/marco-floral.svg" alt="" aria-hidden="true">
       <div class="contenedor reveal">
         <p class="titulo-seccion sans-uo">Mis padres</p>
-        <img class="divisor" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+        <img class="divisor" src="assets/images/divisor-floral.svg" alt="" aria-hidden="true">
         <div class="padres-fila">
           <p class="padre" data-campo="padre1">Nombre</p>
           <span class="padres-corazon" aria-hidden="true">&#9829;</span>
@@ -117,16 +116,17 @@
         <div class="tarjeta concepto">
           <span class="concepto-comilla serif" aria-hidden="true">&ldquo;</span>
           <p class="serif-it" data-campo="concepto"></p>
-          <img class="divisor-pequeno" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+          <img class="divisor-pequeno" src="assets/images/divisor-floral.svg" alt="" aria-hidden="true">
         </div>
       </div>
     </section>
 
     <!-- ================= LUGAR ================= -->
     <section class="seccion" id="lugar" aria-label="Ubicación del evento">
+      <img class="marco-floral" src="assets/images/marco-floral.svg" alt="" aria-hidden="true">
       <div class="contenedor reveal">
         <p class="titulo-seccion sans-uo">Lugar</p>
-        <img class="divisor" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+        <img class="divisor" src="assets/images/divisor-floral.svg" alt="" aria-hidden="true">
         <img class="lugar-pin" src="assets/images/pin.svg" alt="Icono de ubicación">
         <p class="lugar-nombre serif" data-campo="lugar"></p>
         <p class="lugar-direccion sans" data-campo="direccion"></p>
@@ -140,9 +140,10 @@
 
     <!-- ================= CÓDIGO DE VESTIMENTA ================= -->
     <section class="seccion" id="vestimenta" aria-label="Código de vestimenta">
+      <img class="marco-floral" src="assets/images/marco-floral.svg" alt="" aria-hidden="true">
       <div class="contenedor reveal">
         <p class="titulo-seccion sans-uo">Código de vestimenta</p>
-        <img class="divisor" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+        <img class="divisor" src="assets/images/divisor-floral.svg" alt="" aria-hidden="true">
         <img class="vestido" src="assets/images/vestido.svg" alt="Silueta de vestido elegante">
         <p class="vestimenta-tipo serif" data-campo="vestimenta"></p>
         <p class="vestimenta-desc sans" data-campo="vestimentaDesc"></p>
@@ -153,6 +154,7 @@
 
     <!-- ================= LLUVIA DE SOBRES ================= -->
     <section class="seccion sobres-seccion" id="sobres" aria-label="Información de regalos">
+      <img class="marco-floral" src="assets/images/marco-floral.svg" alt="" aria-hidden="true">
       <div class="lluvia" aria-hidden="true" id="lluvia">
         <span class="gotita g1"></span>
         <span class="gotita g2"></span>
@@ -164,7 +166,7 @@
       <div class="contenedor" id="sobresContenedor">
         <div class="reveal">
           <p class="titulo-seccion sans-uo" data-campo="sobreTitulo"></p>
-          <img class="divisor" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+          <img class="divisor" src="assets/images/divisor-floral.svg" alt="" aria-hidden="true">
           <div class="sobre-grande">
             <img src="assets/images/sobre.svg" alt="Sobre de regalo" class="sobre-grande-img">
           </div>
@@ -176,10 +178,11 @@
 
     <!-- ================= CIERRE ================= -->
     <section class="seccion final" id="final" aria-label="Agradecimiento y despedida">
+      <img class="marco-floral" src="assets/images/marco-floral.svg" alt="" aria-hidden="true">
       <div class="contenedor reveal">
-        <img class="corona-final" src="assets/images/corona.svg" alt="" aria-hidden="true">
+        <img class="corona-final" src="assets/images/corona-floral.svg" alt="" aria-hidden="true">
         <p class="final-despedida script" data-campo="despedida"></p>
-        <img class="divisor" src="assets/images/divisor.svg" alt="" aria-hidden="true">
+        <img class="divisor" src="assets/images/divisor-floral.svg" alt="" aria-hidden="true">
         <p class="final-mensaje serif-it" data-campo="mensajeFinal"></p>
         <p class="final-nombre script" data-campo="nombreHomenajeada"></p>
         <p class="final-evento serif"><span data-campo="fechaTexto"></span> <span aria-hidden="true">&middot;</span> <span data-campo="hora"></span></p>
@@ -196,9 +199,9 @@
   <!-- Reproductor de música flotante -->
   <button type="button" class="musica-btn" id="musicaBtn" aria-label="Reproducir música" aria-pressed="false">
     <svg class="disco" viewBox="0 0 40 40" aria-hidden="true">
-      <circle cx="20" cy="20" r="18" fill="#FBF4E6" stroke="#A87F3F" stroke-width="1.6"/>
-      <circle cx="20" cy="20" r="7.5" fill="none" stroke="#A87F3F" stroke-width="1"/>
-      <circle cx="20" cy="20" r="2.6" fill="#A87F3F"/>
+      <circle cx="20" cy="20" r="18" fill="#FFF6F1" stroke="#C9A272" stroke-width="1.6"/>
+      <circle cx="20" cy="20" r="7.5" fill="none" stroke="#C9A272" stroke-width="1"/>
+      <circle cx="20" cy="20" r="2.6" fill="#C9A272"/>
     </svg>
     <span class="ecualizador" aria-hidden="true"><i></i><i></i><i></i></span>
   </button>
