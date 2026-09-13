@@ -231,6 +231,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -262,11 +263,18 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 .sans-uo { font-family: var(--sans); text-transform: uppercase; letter-spacing: 0.22em; }
 .sans-it { font-family: var(--sans); font-style: italic; }
 
-/* ---------- Sección genérica ---------- */
+/* ---------- Sección genérica (pantalla completa) ---------- */
 .seccion {
-  padding: 66px 22px 62px;
+  padding: 56px 22px 54px;
+  min-height: 100vh;
+  min-height: 100svh;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
 }
 .seccion > .contenedor {
   position: relative;
@@ -335,6 +343,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   align-items: center;
   position: relative;
   text-align: center;
+  scroll-snap-align: start;
   padding: calc(22px + env(safe-area-inset-top)) 24px calc(20px + env(safe-area-inset-bottom));
   background:
     radial-gradient(120% 80% at 50% 0%, #FBF4FE 0%, var(--crema) 45%, #E4CFEC 100%);
