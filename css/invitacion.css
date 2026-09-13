@@ -151,12 +151,12 @@
   margin: 8px 0 2px;
 }
 
-.sobre-apertura-nombre {
-  font-size: clamp(44px, 14vw, 64px);
-  line-height: 1.1;
+.sobre-apertura-titulo {
+  font-size: clamp(38px, 12vw, 58px);
+  line-height: 1.05;
   color: var(--tinta);
   text-shadow: 0 3px 16px rgba(255, 255, 255, 0.6);
-  margin: 6px 0 18px;
+  margin: 4px 0 16px;
 }
 
 /* -------- el sobre (sobre-uno) -------- */
