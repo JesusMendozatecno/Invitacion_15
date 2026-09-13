@@ -33,10 +33,40 @@
         <img class="sobre-apertura-corona" src="assets/images/corona-floral.svg" alt="" aria-hidden="true">
         <p class="sobre-apertura-top sans">Invitación especial</p>
         <div class="sobre-apertura-nombre script" data-campo="nombreHomenajeada">Isabella Romero</div>
-        <div class="sobre-uno">
-          <img class="sobre-uno-img" src="assets/images/sobre.svg" alt="Sobre de invitación cerrado con sello de corazón" role="img">
-          <span class="sobre-uno-sello serif" aria-hidden="true">&#9829;</span>
-          <span class="sobre-uno-flap" aria-hidden="true"></span>
+        <div class="sobre-uno" role="img" aria-label="Sobre de invitación cerrado con sello de corazón">
+          <svg class="sobre-svg" viewBox="0 0 240 170" aria-hidden="true">
+            <defs>
+              <linearGradient id="gsobreA" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#FBF3FE"/>
+                <stop offset="1" stop-color="#EBDCF7"/>
+              </linearGradient>
+              <linearGradient id="gflapA" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#FFFDFC"/>
+                <stop offset="1" stop-color="#F0E2FA"/>
+              </linearGradient>
+            </defs>
+
+            <g class="sobre-interior">
+              <path d="M16 18 L120 96 L224 18 Z" fill="#F6EDFB" stroke="#CFABE0" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M56 34 L120 84 M184 34 L120 84" stroke="#D4B8EA" stroke-width="1.2" stroke-dasharray="3 5" fill="none" opacity="0.7"/>
+              <path class="sobre-estrella" d="M120 46 l3 6 6.6 1 -4.8 4.6 1 6.7 -5.8 -3.1 -5.8 3.1 1 -6.7 -4.8 -4.6 6.6 -1 Z" fill="#D4A437"/>
+            </g>
+
+            <g class="sobre-cuerpo">
+              <rect x="16" y="18" width="208" height="134" rx="10" fill="url(#gsobreA)" stroke="#D4A437" stroke-width="2"/>
+              <path d="M16 152 L120 88 L224 152" fill="none" stroke="#CFABE0" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M120 58 L120 92" stroke="#D4B8EA" stroke-width="1.3" opacity="0.8"/>
+              <circle cx="42" cy="52" r="2.4" fill="#D4A437"/>
+              <circle cx="200" cy="122" r="2.4" fill="#D4A437"/>
+              <path d="M40 128 l0 8 M36 132 l8 0 M196 32 l0 8 M192 36 l8 0" stroke="#D4B8EA" stroke-width="1.4" stroke-linecap="round"/>
+            </g>
+
+            <g class="sobre-flap">
+              <path d="M16 18 L120 96 L224 18 Z" fill="url(#gflapA)" stroke="#C9A4E0" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M120 60 L120 94" stroke="#D4B8EA" stroke-width="1.1" opacity="0.6"/>
+              <path d="M120 64 C108 50 90 57 90 71 C90 84 120 98 120 98 C120 98 150 84 150 71 C150 57 132 50 120 64 Z" fill="#A757CF" opacity="0.92"/>
+            </g>
+          </svg>
         </div>
         <p class="sobre-apertura-sub sans">Toca el sobre para abrir tu invitación</p>
       </div>
