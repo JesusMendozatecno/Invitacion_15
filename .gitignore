@@ -10,3 +10,6 @@ _dom_ok.html
 Thumbs.db
 .DS_Store
 *.log
+
+# Scripts de verificacion en raiz (temporales)
+verificar*.js

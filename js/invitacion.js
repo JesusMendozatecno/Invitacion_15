@@ -6,7 +6,7 @@
 
 const INVITACION = {
   /* ---- Datos principales ---- */
-  nombreHomenajeada: "Tu Nombre",          // PENDIENTE: nombre real de la homenajeada
+  nombreHomenajeada: "Isabella Romero",          // PENDIENTE: nombre real de la homenajeada
   evento: "MIS QUINCE AÑOS",               // PENDIENTE: tipo de evento
   portadaSaludo: "Estás invitado a celebrar",
 

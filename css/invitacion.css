@@ -4,20 +4,29 @@
    ============================================================ */
 
 :root {
-  --crema: #FBF6EE;
-  --crema-suave: #F4EBDC;
-  --crema-fondo: #FDF9F1;
-  --blanco: #FFFFFF;
-  --tinta: #4A3826;
-  --tinta-suave: #7C6246;
-  --tinta-clara: #A08A6B;
-  --oro: #B08D57;
-  --oro-claro: #C9AE7E;
-  --oro-suave: #F2E4C8;
-  --oro-linea: #DCC49A;
-  --rojo-corazon: #B94A38;
-  --verde-hoja: #7A8B63;
-  --sombra-suave: 0 10px 28px rgba(122, 98, 60, 0.14);
+  /* -----------------------------------------------------
+     PALETA RAPUNZEL · PREMIUM
+     Púrpura dominante · Dorado como lujo · Champán claro
+     (la flor Gota de Sol como elemento distintivo)
+     ----------------------------------------------------- */
+  --crema: #F2E7F0;            /* púrpura lavanda muy suave (fondos) */
+  --crema-suave: #E7D6EC;      /* lavanda rosada (secciones alternas) */
+  --crema-fondo: #FAF4F8;      /* fondo general lavanda clara */
+  --blanco: #FFFDFC;
+  --tinta: #4A2550;            /* ciruela profundo · texto principal */
+  --tinta-suave: #6E3A6E;      /* ciruela medio */
+  --tinta-clara: #A77BA1;      /* lavanda desaturada (texto suave) */
+  --oro: #C79A3A;              /* dorado cálido (Gota de Sol) */
+  --oro-claro: #E0B94F;
+  --oro-suave: #F4E6BF;        /* dorado muy claro */
+  --oro-linea: #E3C27A;        /* dorado para bordes/badges */
+  --rojo-corazon: #C77BBE;     /* lavanda rosada (corazón entre padres) */
+  --verde-hoja: #8FA268;       /* verde suave (hojas de la Gota) */
+  --purpura: #9B4D96;          /* PÚRPURA REAL · color principal */
+  --purpura-osc: #6D315F;      /* ciruela oscuro */
+  --lavanda: #C77BBE;          /* lavanda rosada */
+  --champan: #E8C982;          /* champán · brillo y luz */
+  --sombra-suave: 0 10px 28px rgba(109, 49, 95, 0.18);
 
   --serif: "Cormorant Garamond", "Times New Roman", serif;
   --script: "Great Vibes", "Brush Script MT", cursive;
