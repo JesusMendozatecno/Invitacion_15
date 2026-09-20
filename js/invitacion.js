@@ -440,8 +440,14 @@ const invitados = {
   cancelar: $("#btnCancelarInvitado"),
   lista: $("#listaInvitados"),
   vacio: $("#invitadosVacio"),
-  nota: $("#invitadosNota")
+  estado: $("#invitadosEstado")
 };
+
+function estadoInvitados(texto, esError) {
+  invitados.estado.textContent = texto;
+  invitados.estado.hidden = false;
+  invitados.estado.classList.toggle("error", !!esError);
+}
 
 const SOLO_LETRAS = /^[A-Za-zÁÉÍÓÚÜáéíóúüÑñ ]*$/;
 
@@ -453,14 +459,21 @@ function pintarListaInvitados(nombres) {
   invitados.lista.textContent = "";
   if (!nombres.length) {
     invitados.vacio.hidden = false;
-    return;
+  } else {
+    invitados.vacio.hidden = true;
+    nombres.forEach((nombre) => {
+      const li = document.createElement("li");
+      li.textContent = nombre;
+      invitados.lista.appendChild(li);
+    });
   }
-  invitados.vacio.hidden = true;
-  nombres.forEach((nombre) => {
-    const li = document.createElement("li");
-    li.textContent = nombre;
-    invitados.lista.appendChild(li);
-  });
+  estadoInvitados(
+    "Sincronizado en vivo · " +
+      nombres.length +
+      " confirmado" +
+      (nombres.length === 1 ? "" : "s"),
+    false
+  );
 }
 
 function abrirModalInvitados() {
@@ -494,14 +507,21 @@ async function guardarInvitado() {
 
   try {
     const ref = firebase.firestore().collection("invitados");
-    await ref.add({
+    // Espera máxima de 8 s para que SIEMPRE aparezca un mensaje
+    const guardar = ref.add({
       nombre: nombre,
       creado: firebase.firestore.FieldValue.serverTimestamp()
     });
+    const reloj = new Promise((_, rej) =>
+      setTimeout(() => rej(new Error("la red no responde, revisa tu conexión a internet")), 8000)
+    );
+    await Promise.race([guardar, reloj]);
+    estadoInvitados("Confirmado: " + nombre, false);
     mostrarToast("¡Gracias por confirmar, " + nombre.split(" ")[0] + "!");
   } catch (err) {
     console.error(err);
     const detalle = err && err.message ? ": " + err.message : "";
+    estadoInvitados("No se pudo guardar" + detalle.slice(0, 110), true);
     mostrarToast("No se pudo guardar." + detalle.slice(0, 110));
   }
 }
@@ -547,6 +567,7 @@ function iniciarInvitados() {
 
   // Conexión en tiempo real (Firestore)
   if (invitadosFirebaseListo()) {
+    estadoInvitados("Conectando con la lista de invitados...", false);
     try {
       firebase.initializeApp(INVITADOS_FIREBASE);
       firebase
@@ -558,15 +579,18 @@ function iniciarInvitados() {
           (err) => {
             console.error(err);
             const detalle = err && err.message ? ": " + err.message : "";
+            estadoInvitados("Error al sincronizar la lista" + detalle.slice(0, 110), true);
             mostrarToast("No se pudo conectar a la lista en tiempo real." + detalle.slice(0, 110));
           }
         );
     } catch (err) {
       console.error(err);
+      const detalle = err && err.message ? ": " + err.message : "";
+      estadoInvitados("Error con Firebase" + detalle.slice(0, 110), true);
       mostrarToast("Revisa la configuración de Firebase en js/invitacion.js.");
     }
   } else {
-    invitados.nota.hidden = false;
+    estadoInvitados("Conecta la lista a Firebase para guardar y ver invitados en tiempo real.", true);
   }
 }
 
