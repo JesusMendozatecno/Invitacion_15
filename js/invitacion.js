@@ -483,9 +483,12 @@ async function guardarInvitado() {
   const nombre = invitados.input.value.trim().replace(/\s{2,}/g, " ");
   if (invitados.guardar.disabled || !nombre) return;
 
+  // Cierra el modal de inmediato al pulsar Guardar
+  cerrarModalInvitados();
+  invitados.input.value = "";
+
   if (!invitadosFirebaseListo()) {
     mostrarToast("Conecta la lista a Firebase para poder guardar invitados.");
-    cerrarModalInvitados();
     return;
   }
 
@@ -496,7 +499,6 @@ async function guardarInvitado() {
       creado: firebase.firestore.FieldValue.serverTimestamp()
     });
     mostrarToast("¡Gracias por confirmar, " + nombre.split(" ")[0] + "!");
-    cerrarModalInvitados();
   } catch (err) {
     console.error(err);
     mostrarToast("No se pudo guardar. Revisa tu conexión e inténtalo de nuevo.");
