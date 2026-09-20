@@ -501,7 +501,8 @@ async function guardarInvitado() {
     mostrarToast("¡Gracias por confirmar, " + nombre.split(" ")[0] + "!");
   } catch (err) {
     console.error(err);
-    mostrarToast("No se pudo guardar. Revisa tu conexión e inténtalo de nuevo.");
+    const detalle = err && err.message ? ": " + err.message : "";
+    mostrarToast("No se pudo guardar." + detalle.slice(0, 110));
   }
 }
 
@@ -556,7 +557,8 @@ function iniciarInvitados() {
           (snap) => pintarListaInvitados(snap.docs.map((doc) => doc.data().nombre)),
           (err) => {
             console.error(err);
-            mostrarToast("No se pudo conectar a la lista en tiempo real.");
+            const detalle = err && err.message ? ": " + err.message : "";
+            mostrarToast("No se pudo conectar a la lista en tiempo real." + detalle.slice(0, 110));
           }
         );
     } catch (err) {
