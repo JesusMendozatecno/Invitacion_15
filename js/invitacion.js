@@ -24,11 +24,10 @@ const INVITACION = {
   concepto: "Con la bendición de mis padres y el cariño de toda la familia, los invito con una enorme alegría a celebrar este día tan especial. Su presencia es el mejor regalo que puedo recibir.",
 
   /* ---- Lugar ---- */
-  // PENDIENTE: confirmar con la abuela los datos. La dirección real se compartirá después.
-  lugar: "Club del Señor Nivaldo",
-  direccion: "Guasonic · dirección por confirmar",
-  maps: "PENDIENTE",                       // PENDIENTE: pegar URL real de Google Maps
-  notaLugar: "Preguntándole a la abuela la dirección exacta... en cuanto la confirme les aviso el pin de la ubicación. ¡Los espero!",
+  lugar: "Piscina Nivaldo",
+  direccion: "86FC+MCR, Av. 4 Zamora, Cocorote 3208, Yaracuy",
+  maps: "https://www.google.com/maps/search/?api=1&query=86FC%2BMCR%2C+Cocorote+3208%2C+Yaracuy",
+  notaLugar: "¡Piscina con ambiente familiar para celebrar! ¿Dudas? Llámanos al 0424-5802083.",
 
   /* ---- Vestimenta ---- */
   vestimenta: "Semi Formal",

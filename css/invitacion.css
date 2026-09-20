@@ -718,9 +718,44 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 }
 
 .lugar-direccion {
-  margin: 6px 0 24px;
+  margin: 6px 0 10px;
   font-size: 13px;
   color: var(--tinta-suave);
+}
+
+.lugar-telefono {
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 9px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--oro-linea);
+  background: var(--oro-suave);
+  color: var(--tinta);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.lugar-telefono:hover {
+  transform: translateY(-2px);
+}
+
+.mapa-wrap {
+  width: 100%;
+  max-width: 420px;
+  height: 250px;
+  margin-top: 22px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1.5px solid var(--oro-linea);
+  box-shadow: var(--sombra-suave);
+  background: var(--blanco);
+}
+.mapa-embed {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 
 .lugar-nota {
