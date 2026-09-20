@@ -428,7 +428,8 @@ const INVITADOS_FIREBASE = {
   projectId: "lista-cumpleanos",
   storageBucket: "lista-cumpleanos.firebasestorage.app",
   messagingSenderId: "778574051201",
-  appId: "1:778574051201:web:79420e428c9ca658b55a80"
+  appId: "1:778574051201:web:79420e428c9ca658b55a80",
+  measurementId: "G-27X4E64JFQ"
 };
 
 const invitados = {
@@ -570,6 +571,10 @@ function iniciarInvitados() {
     estadoInvitados("Conectando con la lista de invitados...", false);
     try {
       firebase.initializeApp(INVITADOS_FIREBASE);
+      // Analytics: registra usuarios activos y retención en el panel
+      if (typeof firebase.analytics === "function") {
+        firebase.analytics();
+      }
       firebase
         .firestore()
         .collection("invitados")
