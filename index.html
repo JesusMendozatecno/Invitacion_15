@@ -212,23 +212,6 @@
       </div>
     </section>
 
-    <!-- ================= LISTA DE INVITADOS ================= -->
-    <section class="seccion seccion-invitados" id="invitados" aria-label="Lista de invitados confirmados">
-      <img class="marco-floral" src="assets/images/marco-floral.svg" alt="" aria-hidden="true">
-      <div class="contenedor reveal">
-        <p class="titulo-seccion sans-uo">Invitados</p>
-        <img class="divisor" src="assets/images/divisor-floral.svg" alt="" aria-hidden="true">
-        <button type="button" class="boton boton-confirmar" id="btnConfirmar" aria-label="Confirmar asistencia">
-          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Confirmar asistencia</span>
-        </button>
-        <h2 class="lista-titulo sans-uo">Lista de Invitados Confirmados</h2>
-        <p class="invitados-vacio sans-it" id="invitadosVacio">Aún no hay confirmaciones. ¡Sé el primero!</p>
-        <ul class="lista-invitados" id="listaInvitados"></ul>
-        <p class="invitados-estado sans" id="invitadosEstado" role="status" aria-live="polite" hidden></p>
-      </div>
-    </section>
-
     <!-- ================= CIERRE ================= -->
     <section class="seccion final" id="final" aria-label="Agradecimiento y despedida">
       <img class="marco-floral" src="assets/images/marco-floral.svg" alt="" aria-hidden="true">
@@ -272,27 +255,10 @@
   <!-- Aviso ligero (no emergente) -->
   <p class="toast sans" id="toast" role="status" aria-live="polite" hidden></p>
 
-  <!-- Modal: confirmar asistencia -->
-  <div class="modal-overlay" id="modalInvitados" aria-hidden="true">
-    <div class="modal-caja" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
-      <p class="modal-titulo serif" id="modalTitulo">Confirmar asistencia</p>
-      <label class="modal-etiqueta sans" for="invitadoNombre">Nombre completo del invitado</label>
-      <input class="modal-input sans" id="invitadoNombre" name="invitadoNombre" type="text" autocomplete="name" placeholder="Ej. Jesús Mendoza" maxlength="60" spellcheck="false">
-      <p class="modal-error sans" id="modalError" role="alert" hidden>Por favor, ingresa solo letras</p>
-      <div class="modal-acciones">
-        <button type="button" class="boton modal-cancelar" id="btnCancelarInvitado">Cancelar</button>
-        <button type="button" class="boton modal-guardar" id="btnGuardarInvitado" disabled>Guardar</button>
-      </div>
-    </div>
-  </div>
-
   <noscript>
     <div style="font-family:sans-serif;padding:1.5rem;text-align:center;">Activa JavaScript para ver la invitación completa.</div>
   </noscript>
 
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
   <script src="js/invitacion.js"></script>
 </body>
 </html>
