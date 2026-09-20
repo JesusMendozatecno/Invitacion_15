@@ -982,6 +982,60 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 .musica-btn.visible { opacity: 1; transform: none; }
 .musica-btn:focus-visible { outline: 2px solid var(--tinta); outline-offset: 3px; }
 
+/* ---------- Navegación con flechas entre secciones ---------- */
+.nav-secciones {
+  position: fixed;
+  right: calc(14px + env(safe-area-inset-right));
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(-50%) translateX(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.nav-secciones.visible { opacity: 1; transform: translateY(-50%) translateX(0); }
+
+.nav-flecha {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--blanco);
+  border: 1.5px solid var(--oro-linea);
+  box-shadow: 0 8px 18px rgba(122, 47, 160, 0.32);
+  color: var(--tinta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+.nav-flecha svg {
+  width: 22px;
+  height: 22px;
+}
+.nav-flecha:hover:not(:disabled) {
+  background: var(--purpura);
+  color: var(--blanco);
+  transform: scale(1.08);
+}
+.nav-flecha:active:not(:disabled) { transform: scale(0.96); }
+.nav-flecha:focus-visible { outline: 2px solid var(--tinta); outline-offset: 3px; }
+.nav-flecha:disabled {
+  opacity: 0.35;
+  cursor: default;
+  box-shadow: none;
+}
+
+@media (min-width: 700px) {
+  .nav-flecha {
+    width: 46px;
+    height: 46px;
+  }
+}
+
 .disco {
   width: 38px;
   height: 38px;

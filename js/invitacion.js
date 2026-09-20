@@ -339,6 +339,46 @@ function iniciarFlotante() {
 }
 
 /* ============================================================
+   NAVEGACIÓN CON FLECHAS ENTRE SECCIONES
+   ============================================================ */
+
+function iniciarNavSecciones() {
+  const nav = $("#navSecciones");
+  const arriba = $("#navArriba");
+  const abajo = $("#navAbajo");
+  const secciones = [document.getElementById("portada")].concat($$(".seccion"));
+
+  function indiceActual() {
+    const pos = window.scrollY + window.innerHeight * 0.35;
+    let idx = 0;
+    secciones.forEach((sec, i) => {
+      if (sec.getBoundingClientRect().top + window.scrollY <= pos) idx = i;
+    });
+    return idx;
+  }
+
+  function actualizar() {
+    const i = indiceActual();
+    arriba.disabled = i === 0;
+    abajo.disabled = i === secciones.length - 1;
+    nav.classList.toggle("visible", window.scrollY > window.innerHeight * 0.4);
+  }
+
+  function irA(i) {
+    secciones[Math.max(0, Math.min(secciones.length - 1, i))].scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+
+  arriba.addEventListener("click", () => irA(indiceActual() - 1));
+  abajo.addEventListener("click", () => irA(indiceActual() + 1));
+  window.addEventListener("scroll", actualizar, { passive: true });
+  window.addEventListener("resize", actualizar, { passive: true });
+  actualizar();
+}
+
+/* ============================================================
    SOBRE DE APERTURA
    ============================================================ */
 
@@ -540,6 +580,7 @@ document.addEventListener("DOMContentLoaded", () => {
   iniciarFlotante();
   iniciarSobre();
   iniciarPortada();
+  iniciarNavSecciones();
   iniciarInvitados();
   Musica.crear();
 });
