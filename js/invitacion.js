@@ -376,6 +376,158 @@ function iniciarPortada() {
 }
 
 /* ============================================================
+   LISTA DE INVITADOS · FIREBASE (tiempo real)
+   ------------------------------------------------------------
+   ★ Para activar: crea un proyecto en https://console.firebase.google.com
+   (Firestore Database en modo producción/prueba), habilita la regla de
+   escritura para un mes y pega aquí la configuración de tu app web.
+   ============================================================ */
+
+const INVITADOS_FIREBASE = {
+  apiKey: "",            // ★ PENDIENTE: pega la configuración de tu proyecto
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
+};
+
+const invitados = {
+  btn: $("#btnConfirmar"),
+  overlay: $("#modalInvitados"),
+  input: $("#invitadoNombre"),
+  error: $("#modalError"),
+  guardar: $("#btnGuardarInvitado"),
+  cancelar: $("#btnCancelarInvitado"),
+  lista: $("#listaInvitados"),
+  vacio: $("#invitadosVacio"),
+  nota: $("#invitadosNota")
+};
+
+const SOLO_LETRAS = /^[A-Za-zÁÉÍÓÚÜáéíóúüÑñ ]*$/;
+
+function invitadosFirebaseListo() {
+  return typeof firebase !== "undefined" && !!INVITADOS_FIREBASE.apiKey;
+}
+
+function pintarListaInvitados(nombres) {
+  invitados.lista.textContent = "";
+  if (!nombres.length) {
+    invitados.vacio.hidden = false;
+    return;
+  }
+  invitados.vacio.hidden = true;
+  nombres.forEach((nombre) => {
+    const li = document.createElement("li");
+    li.textContent = nombre;
+    invitados.lista.appendChild(li);
+  });
+}
+
+function abrirModalInvitados() {
+  invitados.overlay.classList.add("abierto");
+  invitados.overlay.setAttribute("aria-hidden", "false");
+  invitados.input.value = "";
+  invitados.error.hidden = true;
+  invitados.error.textContent = "";
+  invitados.input.classList.remove("invalido");
+  invitados.guardar.disabled = true;
+  invitados.input.focus();
+}
+
+function cerrarModalInvitados() {
+  invitados.overlay.classList.remove("abierto");
+  invitados.overlay.setAttribute("aria-hidden", "true");
+}
+
+async function guardarInvitado() {
+  const nombre = invitados.input.value.trim().replace(/\s{2,}/g, " ");
+  if (invitados.guardar.disabled || !nombre) return;
+
+  if (!invitadosFirebaseListo()) {
+    mostrarToast("Conecta la lista a Firebase para poder guardar invitados.");
+    cerrarModalInvitados();
+    return;
+  }
+
+  try {
+    const ref = firebase.firestore().collection("invitados");
+    await ref.add({
+      nombre: nombre,
+      creado: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    mostrarToast("¡Gracias por confirmar, " + nombre.split(" ")[0] + "!");
+    cerrarModalInvitados();
+  } catch (err) {
+    console.error(err);
+    mostrarToast("No se pudo guardar. Revisa tu conexión e inténtalo de nuevo.");
+  }
+}
+
+function iniciarInvitados() {
+  // Botón principal
+  invitados.btn.addEventListener("click", abrirModalInvitados);
+
+  // Cerrar: botón Cancelar, clic fuera del modal o tecla Esc
+  invitados.cancelar.addEventListener("click", cerrarModalInvitados);
+  invitados.overlay.addEventListener("click", (e) => {
+    if (e.target === invitados.overlay) cerrarModalInvitados();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && invitados.overlay.classList.contains("abierto")) {
+      cerrarModalInvitados();
+    }
+  });
+
+  // Validación: solo letras (con acentos y ñ), espacios y nada más
+  invitados.input.addEventListener("input", () => {
+    const valor = invitados.input.value;
+    if (!SOLO_LETRAS.test(valor)) {
+      invitados.error.textContent = "Por favor, ingresa solo letras";
+      invitados.error.hidden = false;
+      invitados.input.classList.add("invalido");
+      invitados.guardar.disabled = true;
+    } else {
+      invitados.error.hidden = true;
+      invitados.input.classList.remove("invalido");
+      invitados.guardar.disabled = valor.trim().length < 2;
+    }
+  });
+
+  // Enviar con Enter o clic en Guardar
+  invitados.input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      guardarInvitado();
+    }
+  });
+  invitados.guardar.addEventListener("click", guardarInvitado);
+
+  // Conexión en tiempo real (Firestore)
+  if (invitadosFirebaseListo()) {
+    try {
+      firebase.initializeApp(INVITADOS_FIREBASE);
+      firebase
+        .firestore()
+        .collection("invitados")
+        .orderBy("creado", "desc")
+        .onSnapshot(
+          (snap) => pintarListaInvitados(snap.docs.map((doc) => doc.data().nombre)),
+          (err) => {
+            console.error(err);
+            mostrarToast("No se pudo conectar a la lista en tiempo real.");
+          }
+        );
+    } catch (err) {
+      console.error(err);
+      mostrarToast("Revisa la configuración de Firebase en js/invitacion.js.");
+    }
+  } else {
+    invitados.nota.hidden = false;
+  }
+}
+
+/* ============================================================
    INICIO
    ============================================================ */
 
@@ -389,5 +541,6 @@ document.addEventListener("DOMContentLoaded", () => {
   iniciarFlotante();
   iniciarSobre();
   iniciarPortada();
+  iniciarInvitados();
   Musica.crear();
 });
