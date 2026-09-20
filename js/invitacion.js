@@ -378,18 +378,17 @@ function iniciarPortada() {
 /* ============================================================
    LISTA DE INVITADOS · FIREBASE (tiempo real)
    ------------------------------------------------------------
-   ★ Para activar: crea un proyecto en https://console.firebase.google.com
-   (Firestore Database en modo producción/prueba), habilita la regla de
-   escritura para un mes y pega aquí la configuración de tu app web.
+   Conectado al proyecto "lista-cumpleanos" (Firestore).
+   Los cambios se ven en vivo en todos los dispositivos.
    ============================================================ */
 
 const INVITADOS_FIREBASE = {
-  apiKey: "",            // ★ PENDIENTE: pega la configuración de tu proyecto
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
+  apiKey: "AIzaSyB5WY4CGBwhLA1uuSM6dyb2u8Wz-003p1g",
+  authDomain: "lista-cumpleanos.firebaseapp.com",
+  projectId: "lista-cumpleanos",
+  storageBucket: "lista-cumpleanos.firebasestorage.app",
+  messagingSenderId: "778574051201",
+  appId: "1:778574051201:web:79420e428c9ca658b55a80"
 };
 
 const invitados = {
